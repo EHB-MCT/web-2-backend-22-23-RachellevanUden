@@ -209,7 +209,7 @@ app.post('/verifyID', async (req, res) => {
 // sneaks api
 app.get('/popular-sneakers', async (req, res) => {
     try {
-        const shoeLimit = 6; // Limit of shoes to return
+        const shoeLimit = 18; // Limit of shoes to return
         sneaks.getMostPopular(shoeLimit, function (err, products) {
             res.status(200).send(products);
         });
@@ -237,7 +237,7 @@ app.get('/sneaker/id', async (req,res) =>{
             console.log(sneakerId);
   
     // Function from sneaker API to get all sneakers
-    const shoeLimit = 6; // Limit of shoes to return
+    const shoeLimit = 18; // Limit of shoes to return
         sneaks.getMostPopular(shoeLimit, function (err, products) {
              // Run through sneakers and filter by ID
         const result = products.filter((product) => product.id = sneakerId);
@@ -248,6 +248,8 @@ app.get('/sneaker/id', async (req,res) =>{
             console.log('Error: ' + error)
         }
   });
+
+  //Api doesn't seem to work properly. Might be on me but I can't figure it out.
 
 app.listen(3000);
 console.log('app running at http://localhost:3000');
