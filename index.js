@@ -240,7 +240,7 @@ app.get('/sneaker/id', async (req,res) =>{
     const shoeLimit = 18; // Limit of shoes to return
         sneaks.getMostPopular(shoeLimit, function (err, products) {
              // Run through sneakers and filter by ID
-        const result = products.filter((product) => product.id = sneakerId);
+        const result = products.filter((product) => product.goatProductId == sneakerId);
             res.status(200).send(result);
         });
 
