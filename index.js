@@ -207,7 +207,7 @@ app.post('/verifyID', async (req, res) => {
 });
 
 // sneaks api
-app.get('/popular-sneakers', async (req, res) => {
+app.get('/populair-sneakers', async (req, res) => {
     try {
         const shoeLimit = 18; // Limit of shoes to return
         sneaks.getMostPopular(shoeLimit, function (err, products) {
